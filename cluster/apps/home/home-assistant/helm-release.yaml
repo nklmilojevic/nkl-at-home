@@ -17,7 +17,7 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    # useHostNetwork: true
+    hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: homeassistant/home-assistant
@@ -27,8 +27,8 @@ spec:
     service:
       main:
         type: LoadBalancer
-        # externalIPs:
-        #   - "${SVC_HASS_IP}"
+        externalIPs:
+          - "${SVC_HASS_IP}"
         externalTrafficPolicy: Local
         ports:
           http:
