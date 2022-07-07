@@ -11,4 +11,3 @@ resources:
   - traefik
   - unbound
   - pihole
-  - ingress-nginx
