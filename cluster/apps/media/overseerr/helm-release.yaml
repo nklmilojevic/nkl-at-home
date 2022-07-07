@@ -36,7 +36,8 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
+          - secretName: overseerr-tls
+            hosts:
               - "overseerr.${SECRET_DOMAIN}"
     podSecurityContext:
       supplementalGroups:

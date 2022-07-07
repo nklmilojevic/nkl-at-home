@@ -53,7 +53,8 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
+          - secretName: qbit-tls
+            hosts:
               - "qbittorrent.${SECRET_DOMAIN}"
     podSecurityContext:
       supplementalGroups:

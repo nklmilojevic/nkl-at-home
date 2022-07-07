@@ -36,7 +36,8 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
+          - secretName: nzbget-tls
+            hosts:
               - "nzbget.${SECRET_DOMAIN}"
     podSecurityContext:
       supplementalGroups:

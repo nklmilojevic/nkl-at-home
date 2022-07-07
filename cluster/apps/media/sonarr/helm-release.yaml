@@ -36,7 +36,8 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
+          - secretName: sonarr-tls
+            hosts:
               - "sonarr.${SECRET_DOMAIN}"
     podSecurityContext:
       supplementalGroups:
