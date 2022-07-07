@@ -45,9 +45,11 @@ spec:
       BLOCK_ICLOUD_PR: false
     ingress:
       enabled: true
-      ingressClassName: "nginx"
+      ingressClassName: "traefik"
       annotations:
-        kubernetes.io/ingress.class: nginx
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
       path: /
       hosts:
         - "pihole.${SECRET_DOMAIN}"
