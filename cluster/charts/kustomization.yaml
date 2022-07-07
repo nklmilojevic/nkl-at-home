@@ -19,3 +19,4 @@ resources:
   - pihole-chart.yaml
   - prometheus-community.yaml
   - vector-chart.yaml
+  - ingress-nginx.yaml
