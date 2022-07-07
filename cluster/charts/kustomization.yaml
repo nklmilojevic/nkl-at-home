@@ -13,3 +13,9 @@ resources:
   - stakater.yaml
   - traefik.yaml
   - weaveworks-kured.yaml
+  - gitea-charts.yaml
+  - grafana-charts.yaml
+  - personal-charts.yaml
+  - pihole-chart.yaml
+  - prometheus-community.yaml
+  - vector-chart.yaml
