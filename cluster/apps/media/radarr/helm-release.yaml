@@ -36,7 +36,8 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
+          - secretName: radarr-tls
+            hosts:
               - "radarr.${SECRET_DOMAIN}"
     podSecurityContext:
       supplementalGroups:
