@@ -11,3 +11,4 @@ resources:
   - traefik
   - unbound
   - pihole
+  - omada
