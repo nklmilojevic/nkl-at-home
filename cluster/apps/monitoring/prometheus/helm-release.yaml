@@ -55,7 +55,7 @@ spec:
         hosts:
           - grafana.${SECRET_DOMAIN}
         tls:
-          - secureName: grafana-tls
+          - secretName: grafana-tls
             hosts:
               - grafana.${SECRET_DOMAIN}
       dashboardProviders:
