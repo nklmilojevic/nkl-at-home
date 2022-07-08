@@ -36,7 +36,7 @@ spec:
             - path: /
               pathType: Prefix
       tls:
-        - secretName: longhorn-tls
+        - secretName: milojevic-rs-tls
           hosts:
             - "longhorn.${SECRET_DOMAIN}"
     defaultSettings:
