@@ -9,5 +9,5 @@ resources:
   - media
   - home
   - monitoring
-  # - storage
+  - storage
   # - system-upgrade
