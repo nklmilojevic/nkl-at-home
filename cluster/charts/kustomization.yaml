@@ -20,3 +20,4 @@ resources:
   - prometheus-community.yaml
   - vector-chart.yaml
   - ingress-nginx.yaml
+  - longhorn.yaml
