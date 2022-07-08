@@ -12,3 +12,4 @@ resources:
   - unbound
   - pihole
   - omada
+  - wildcard-certificate

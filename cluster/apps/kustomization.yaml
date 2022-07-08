@@ -10,5 +10,4 @@ resources:
   - home
   - monitoring
   - storage
-  - wildcard-certificate
   # - system-upgrade
