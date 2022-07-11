@@ -8,7 +8,6 @@ resources:
   - external-dns
   - metallb
   - k8s-gateway
-  - traefik
   - unbound
   - pihole
   - omada
