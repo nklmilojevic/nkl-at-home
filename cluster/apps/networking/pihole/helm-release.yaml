@@ -52,8 +52,7 @@ spec:
       hosts:
         - "pihole.${SECRET_DOMAIN}"
       tls:
-        - secretName: pihole-tls
-          hosts:
+        - hosts:
             - "pihole.${SECRET_DOMAIN}"
     persistentVolumeClaim:
       enabled: true
