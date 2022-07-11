@@ -12,7 +12,7 @@ spec:
       version: 4.1.4
       sourceRef:
         kind: HelmRepository
-        name: ingress-nginx-charts
+        name: ingress-nginx
         namespace: flux-system
       interval: 15m
   install:
@@ -27,13 +27,14 @@ spec:
       namespace: kube-system
   values:
     controller:
-      replicaCount: 3
+      replicaCount: 1
       extraEnvs:
         - name: TZ
           value: "${TIMEZONE}"
       service:
-        externalIPs:
-          - "${SVC_NGINX_ADDR}"
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: |-
+            ${METALLB_INGRESS_ADDR}
         externalTrafficPolicy: Local
       publishService:
         enabled: true
@@ -55,23 +56,25 @@ spec:
         use-forwarded-headers: "true"
       extraArgs:
         default-ssl-certificate: "networking/${SECRET_DOMAIN/./-}-tls"
+      metrics:
+        enabled: false
       podAnnotations:
         configmap.reloader.stakater.com/reload: "cloudflare-proxied-networks"
       resources:
         requests:
-          cpu: 100m
+          cpu: 10m
           memory: 250Mi
         limits:
-          memory: 1000Mi
+          memory: 500Mi
     defaultBackend:
       enabled: true
       image:
         repository: ghcr.io/tarampampam/error-pages
         tag: 2.16.0
-      replicaCount: 3
+      replicaCount: 1
       extraEnvs:
         - name: TEMPLATE_NAME
-          value: ghost
+          value: lost-in-space
         - name: SHOW_DETAILS
           value: "false"
   valuesFrom:

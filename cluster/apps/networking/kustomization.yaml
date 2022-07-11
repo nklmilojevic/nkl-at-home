@@ -13,3 +13,4 @@ resources:
   - pihole
   - omada
   - wildcard-certificate
+  - ingress-nginx
