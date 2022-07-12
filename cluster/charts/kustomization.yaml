@@ -21,3 +21,4 @@ resources:
   - vector-chart.yaml
   - ingress-nginx.yaml
   - longhorn.yaml
+  - kasten-charts.yaml
