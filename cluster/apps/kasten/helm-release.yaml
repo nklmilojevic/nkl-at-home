@@ -26,7 +26,6 @@ spec:
     remediation:
       retries: 5
   values:
-    ingressClassName: "nginx"
     eula:
       accept: true
       company: nklmilojevic
@@ -34,9 +33,9 @@ spec:
     global:
       persistence:
         storageClass: longhorn
-    auth:
-      tokenAuth:
-        enabled: true
+    # auth:
+    #   tokenAuth:
+    #     enabled: true
     clusterName: nkl-at-home
     ingress:
       create: true
