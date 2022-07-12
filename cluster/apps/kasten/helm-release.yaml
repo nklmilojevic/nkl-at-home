@@ -48,5 +48,6 @@ spec:
         - *host
       tls:
         enabled: true
+        secretName: "${SECRET_DOMAIN/./-}-tls"
     grafana:
       enabled: false
