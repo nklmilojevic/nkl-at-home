@@ -33,9 +33,10 @@ spec:
     global:
       persistence:
         storageClass: longhorn
-    # auth:
-    #   tokenAuth:
-    #     enabled: true
+    auth:
+      basicAuth:
+        enabled: true
+        htpasswd: "kasten:$2y$10$9Un0pAkBwCIZPxM43CUtNe4sRcWFBWLDPFxPXP8rrKq1cKhK8kJoS"
     clusterName: nkl-at-home
     ingress:
       create: true
