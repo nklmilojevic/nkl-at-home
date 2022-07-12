@@ -26,6 +26,7 @@ spec:
     remediation:
       retries: 5
   values:
+    ingressClassName: "nginx"
     eula:
       accept: true
       company: nklmilojevic
