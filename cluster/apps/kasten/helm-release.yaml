@@ -32,7 +32,7 @@ spec:
       email: nklmilojevicusers.noreply.github.com
     global:
       persistence:
-        storageClass: longhorn
+        storageClass: nfs-csi
     auth:
       basicAuth:
         enabled: true
