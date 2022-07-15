@@ -10,3 +10,4 @@ resources:
   - reloader
   - kube-vip
   - intel-gpu-plugin
+  - csi-nfs
