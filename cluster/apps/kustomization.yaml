@@ -9,6 +9,6 @@ resources:
   - media
   - home
   - monitoring
-  # - storage
+  - storage
   # - kasten
   # - system-upgrade
