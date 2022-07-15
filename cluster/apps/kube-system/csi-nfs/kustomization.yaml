@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - storage-class.yaml
-  - volume-snapshot-class.ymal
+  - volume-snapshot-class.yaml
