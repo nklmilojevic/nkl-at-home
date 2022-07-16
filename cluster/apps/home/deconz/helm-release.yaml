@@ -22,7 +22,7 @@ spec:
       tag: 2.17.01
     env:
       TZ: "Europe/Belgrade"
-      DECONZ_DEVICE: "/dev/ttyUSB0"
+      DECONZ_DEVICE: "/dev/ttyACM0"
     ingress:
       main:
         enabled: true
@@ -48,4 +48,4 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE1964464-if00
-        mountPath: /dev/ttyUSB0
+        mountPath: /dev/ttyACM0
