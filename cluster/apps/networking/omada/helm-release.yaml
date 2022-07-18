@@ -17,19 +17,14 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    # hostNetwork: true
-    # dnsPolicy: ClusterFirstWithHostNet
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: mbentley/omada-controller
       tag: "5.3"
     env:
       TZ: "Europe/Belgrade"
-      MANAGE_HTTP_PORT: 8088
-      MANAGE_HTTPS_PORT: 8043
-      PORTAL_HTTP_PORT: 8088
-      PORTAL_HTTPS_PORT: 8843
-      SHOW_SERVER_LOGS: true
-      SHOW_MONGODB_LOGS: true
+      MANAGE_HTTPS_PORT: "8043"
     ingress:
       main:
         enabled: true
@@ -47,8 +42,12 @@ spec:
               - "omada.${SECRET_DOMAIN}"
     service:
       main:
+        enabled: true
+      controller:
+        enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_OMADA_IP}"
+        externalTrafficPolicy: Local
         ports:
           mgmt-8088-tcp:
             enabled: true
@@ -113,7 +112,6 @@ spec:
             port: 27217
             protocol: TCP
             targetPort: 27217
-        primary: true
     podSecurityContext:
       supplementalGroups:
         - 100
