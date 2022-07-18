@@ -34,7 +34,6 @@ spec:
           nginx.ingress.kubernetes.io/proxy-redirect-from: "https://([^/]+)/?$"
           nginx.ingress.kubernetes.io/proxy-redirect-to: "https://$1/${SECRET_OMADA_CONTROLLER_ID}/login"
           nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
-          nginx.ingress.kubernetes.io/use-regex: "true"
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
