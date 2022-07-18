@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
+    # hostNetwork: true
+    # dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: mbentley/omada-controller
       tag: "5.3"
@@ -47,6 +47,71 @@ spec:
         ports:
           http:
             port: 8043
+          mgmt-8088-tcp:
+            enabled: true
+            port: 8088
+            protocol: TCP
+            targetPort: 8088
+          mgmt-8043-tcp:
+            enabled: true
+            port: 8043
+            protocol: TCP
+            targetPort: 8043
+          portal-8843-tcp:
+            enabled: true
+            port: 8843
+            protocol: TCP
+            targetPort: 8843
+          eap-29810-tcp:
+            enabled: true
+            port: 29810
+            protocol: TCP
+            targetPort: 29810
+          eap-29810-udp:
+            enabled: true
+            port: 29810
+            protocol: UDP
+            targetPort: 29810
+          eap-29811-tcp:
+            enabled: true
+            port: 29811
+            protocol: TCP
+            targetPort: 29811
+          eap-29811-udp:
+            enabled: true
+            port: 29811
+            protocol: UDP
+            targetPort: 29811
+          eap-29812-tcp:
+            enabled: true
+            port: 29812
+            protocol: TCP
+            targetPort: 29812
+          eap-29812-udp:
+            enabled: true
+            port: 29812
+            protocol: UDP
+            targetPort: 29812
+          eap-29813-tcp:
+            enabled: true
+            port: 29813
+            protocol: TCP
+            targetPort: 29813
+          eap-29813-udp:
+            enabled: true
+            port: 29813
+            protocol: UDP
+            targetPort: 29813
+          eap-29814-tcp:
+            enabled: true
+            port: 29814
+            protocol: TCP
+            targetPort: 29814
+          eap-29814-udp:
+            enabled: true
+            port: 29814
+            protocol: UDP
+            targetPort: 29814
         primary: true
     podSecurityContext:
       supplementalGroups:
