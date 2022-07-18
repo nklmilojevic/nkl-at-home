@@ -32,11 +32,12 @@ spec:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
           nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
-          nginx.ingress.kubernetes.io/app-root: /78265734371558d2f4d627d4d61644b2/login
+          nginx.ingress.kubernetes.io/proxy-redirect-from: "~https://(.+):8043/(.+)/login$"
+          nginx.ingress.kubernetes.io/proxy-redirect-to: "https://$http_host/$2/login"
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
-              - path: /78265734371558d2f4d627d4d61644b2/login
+              - path: /
                 pathType: Prefix
         tls:
           - hosts:
