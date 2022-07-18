@@ -34,7 +34,7 @@ spec:
           nginx.ingress.kubernetes.io/proxy-redirect-from: "https://(.+):8043/(.+)/login"
           nginx.ingress.kubernetes.io/proxy-redirect-to: "https://$http_host/$2/login"
           nginx.ingress.kubernetes.io/use-regex: "true"
-          nginx.ingress.kubernetes.io/app-root: /$2/login
+          nginx.ingress.kubernetes.io/app-root: /(.+)/login
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header  Upgrade $http_upgrade;
             proxy_set_header  Connection "upgrade";
