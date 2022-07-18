@@ -35,10 +35,6 @@ spec:
           nginx.ingress.kubernetes.io/proxy-redirect-to: "https://$1/${SECRET_OMADA_CONTROLLER_ID}/login"
           nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
           nginx.ingress.kubernetes.io/use-regex: "true"
-          nginx.ingress.kubernetes.io/app-root: /(.+)/login
-          nginx.ingress.kubernetes.io/configuration-snippet: |
-            proxy_set_header  Upgrade $http_upgrade;
-            proxy_set_header  Connection "upgrade";
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
