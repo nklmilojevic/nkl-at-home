@@ -43,7 +43,6 @@ spec:
     service:
       main:
         enabled: true
-
       controller:
         enabled: true
         type: LoadBalancer
@@ -65,54 +64,56 @@ spec:
             port: 8843
             protocol: TCP
             targetPort: 8843
-          # EAP Discovery, Adoption, Management, and Upgrade
-          eap-discovery:
+          eap-29810-tcp:
+            enabled: true
+            port: 29810
+            protocol: TCP
+            targetPort: 29810
+          eap-29810-udp:
             enabled: true
             port: 29810
             protocol: UDP
             targetPort: 29810
-          old-eap-mgmt:
+          eap-29811-tcp:
             enabled: true
             port: 29811
             protocol: TCP
             targetPort: 29811
-          old-eap-adopt:
+          eap-29811-udp:
+            enabled: true
+            port: 29811
+            protocol: UDP
+            targetPort: 29811
+          eap-29812-tcp:
             enabled: true
             port: 29812
             protocol: TCP
             targetPort: 29812
-          old-eap-upgrade:
+          eap-29812-udp:
+            enabled: true
+            port: 29812
+            protocol: UDP
+            targetPort: 29812
+          eap-29813-tcp:
             enabled: true
             port: 29813
             protocol: TCP
             targetPort: 29813
-          eap-adopt:
+          eap-29813-udp:
+            enabled: true
+            port: 29813
+            protocol: UDP
+            targetPort: 29813
+          eap-29814-tcp:
             enabled: true
             port: 29814
             protocol: TCP
             targetPort: 29814
-          # Initialization Check
-          init-check:
+          eap-29814-udp:
             enabled: true
-            port: 27001
+            port: 29814
             protocol: UDP
-            targetPort: 27001
-          old-init-info:
-            enabled: true
-            port: 27002
-            protocol: TCP
-            targetPort: 27002
-          # Database Access
-          old-db-access:
-            enabled: true
-            port: 27017
-            protocol: TCP
-            targetPort: 27017
-          db-access:
-            enabled: true
-            port: 27217
-            protocol: TCP
-            targetPort: 27217
+            targetPort: 29814
     podSecurityContext:
       supplementalGroups:
         - 100
