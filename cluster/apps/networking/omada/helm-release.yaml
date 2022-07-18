@@ -43,8 +43,6 @@ spec:
     service:
       main:
         enabled: true
-      controller:
-        enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_OMADA_IP}"
         externalTrafficPolicy: Local
@@ -54,7 +52,7 @@ spec:
             port: 8088
             protocol: TCP
             targetPort: 8088
-          mgmt-8043-tcp:
+          http:
             enabled: true
             port: 8043
             protocol: TCP
