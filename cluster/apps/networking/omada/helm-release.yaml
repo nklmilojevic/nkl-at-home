@@ -24,7 +24,7 @@ spec:
       tag: "5.3"
     env:
       TZ: "Europe/Belgrade"
-      MANAGE_HTTPS_PORT: "443"
+      MANAGE_HTTPS_PORT: "8043"
     ingress:
       main:
         enabled: true
@@ -46,7 +46,7 @@ spec:
         loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           http:
-            port: 443
+            port: 8043
         primary: true
     podSecurityContext:
       supplementalGroups:
