@@ -36,7 +36,7 @@ spec:
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
-              - path: /
+              - path: /78265734371558d2f4d627d4d61644b2/login
                 pathType: Prefix
         tls:
           - hosts:
