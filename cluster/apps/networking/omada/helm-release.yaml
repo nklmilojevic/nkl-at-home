@@ -42,7 +42,7 @@ spec:
               - "omada.${SECRET_DOMAIN}"
     service:
       main:
-        enabled: false
+        enabled: true
       controller:
         enabled: true
         type: LoadBalancer
