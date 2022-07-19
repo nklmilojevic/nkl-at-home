@@ -54,6 +54,7 @@ spec:
             port: 8043
         primary: true
       controller-tcp:
+        enabled: true
         annotations:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
         type: LoadBalancer
