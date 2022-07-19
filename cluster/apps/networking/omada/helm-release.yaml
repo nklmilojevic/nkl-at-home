@@ -52,6 +52,7 @@ spec:
         ports:
           http:
             port: 8043
+        primary: true
       controller-tcp:
         annotations:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
