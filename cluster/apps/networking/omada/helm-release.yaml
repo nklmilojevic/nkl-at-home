@@ -98,11 +98,9 @@ spec:
             targetPort: 27217
       controller-udp:
         enabled: true
-        annotations:
-          metallb.universe.tf/allow-shared-ip: "shared-omada"
         type: LoadBalancer
         externalTrafficPolicy: Cluster
-        loadBalancerIP: "${SVC_OMADA_IP}"
+        loadBalancerIP: 10.5.0.235
         ports:
           eap-discovery:
             enabled: true
