@@ -97,6 +97,7 @@ spec:
             protocol: TCP
             targetPort: 27217
       controller-udp:
+        enabled: true
         annotations:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
         type: LoadBalancer
