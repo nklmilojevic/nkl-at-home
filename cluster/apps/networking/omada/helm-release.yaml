@@ -45,7 +45,9 @@ spec:
     service:
       main:
         type: LoadBalancer
-        # loadBalancerIP: "${SVC_OMADA_IP}"
+        externalTrafficPolicy: Local
+        externalIPs:
+          - "${SVC_OMADA_IP}"
         ports:
           http:
             port: 8043
@@ -58,23 +60,33 @@ spec:
             enabled: true
             port: 8843
             protocol: TCP
+            targetPort: 8843
           # EAP Discovery, Adoption, Management, and Upgrade
           eap-discovery:
             enabled: true
             port: 29810
             protocol: UDP
+            targetPort: 29810
+          eap-mgmt:
+            enabled: true
+            port: 29811
+            protocol: TCP
+            targetPort: 29811
           eap-mgmt-2:
             enabled: true
             port: 29812
             protocol: TCP
+            targetPort: 29812
           eap-mgmt-3:
             enabled: true
             port: 29813
             protocol: TCP
+            targetPort: 29813
           eap-adopt:
             enabled: true
             port: 29814
             protocol: TCP
+            targetPort: 29814
           # Initialization Check
           init-check:
             enabled: true
@@ -86,7 +98,6 @@ spec:
             port: 27217
             protocol: TCP
             targetPort: 27217
-        primary: true
     podSecurityContext:
       supplementalGroups:
         - 100
