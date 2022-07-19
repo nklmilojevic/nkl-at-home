@@ -48,8 +48,7 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
-        externalIPs:
-          - "${SVC_OMADA_IP}"
+        loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           http:
             port: 8043
@@ -58,8 +57,7 @@ spec:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
         type: LoadBalancer
         externalTrafficPolicy: Local
-        externalIPs:
-          - "${SVC_OMADA_IP}"
+        loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           mgmt-8088-tcp:
             enabled: true
@@ -101,8 +99,7 @@ spec:
           metallb.universe.tf/allow-shared-ip: "shared-omada"
         type: LoadBalancer
         externalTrafficPolicy: Local
-        externalIPs:
-          - "${SVC_OMADA_IP}"
+        loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           eap-discovery:
             enabled: true
