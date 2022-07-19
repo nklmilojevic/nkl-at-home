@@ -63,16 +63,18 @@ spec:
             enabled: true
             port: 29810
             protocol: UDP
-          old-eap-mgmt:
+          eap-mgmt-2:
             enabled: true
-            port: 29811
+            port: 29812
             protocol: TCP
-            targetPort: 29811
+          eap-mgmt-3:
+            enabled: true
+            port: 29813
+            protocol: TCP
           eap-adopt:
             enabled: true
             port: 29814
             protocol: TCP
-            targetPort: 29814
           # Initialization Check
           init-check:
             enabled: true
