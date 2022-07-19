@@ -46,11 +46,21 @@ spec:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/allow-shared-ip: "shared-omada"
         externalIPs:
           - "${SVC_OMADA_IP}"
         ports:
           http:
             port: 8043
+      controller-tcp:
+        annotations:
+          metallb.universe.tf/allow-shared-ip: "shared-omada"
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        externalIPs:
+          - "${SVC_OMADA_IP}"
+        ports:
           mgmt-8088-tcp:
             enabled: true
             port: 8088
@@ -61,12 +71,6 @@ spec:
             port: 8843
             protocol: TCP
             targetPort: 8843
-          # EAP Discovery, Adoption, Management, and Upgrade
-          eap-discovery:
-            enabled: true
-            port: 29810
-            protocol: UDP
-            targetPort: 29810
           eap-mgmt:
             enabled: true
             port: 29811
@@ -87,17 +91,24 @@ spec:
             port: 29814
             protocol: TCP
             targetPort: 29814
-          # Initialization Check
-          init-check:
-            enabled: true
-            port: 27001
-            protocol: UDP
-            targetPort: 27001
           db-access:
             enabled: true
             port: 27217
             protocol: TCP
             targetPort: 27217
+      controller-udp:
+        annotations:
+          metallb.universe.tf/allow-shared-ip: "shared-omada"
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        externalIPs:
+          - "${SVC_OMADA_IP}"
+        ports:
+          eap-discovery:
+            enabled: true
+            port: 29810
+            protocol: UDP
+            targetPort: 29810
     podSecurityContext:
       supplementalGroups:
         - 100
