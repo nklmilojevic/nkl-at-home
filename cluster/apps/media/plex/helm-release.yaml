@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
+    # hostNetwork: true
+    # dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: plexinc/pms-docker
       tag: 1.27.2.5929-a806c5905
@@ -37,7 +37,6 @@ spec:
             port: 32400
         externalTrafficPolicy: Local
         primary: true
-    externalTrafficPolicy: Local
     ingress:
       main:
         enabled: true
