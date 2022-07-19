@@ -23,8 +23,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        externalIPs:
-          - "${SVC_MQTT_IP}"
+        loadBalancerIP: "${SVC_MQTT_IP}"
         externalTrafficPolicy: Local
     env:
       TZ: "Europe/Belgrade"

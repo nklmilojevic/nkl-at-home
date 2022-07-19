@@ -99,7 +99,7 @@ spec:
       controller-udp:
         enabled: true
         type: LoadBalancer
-        externalTrafficPolicy: Cluster
+        externalTrafficPolicy: Local
         loadBalancerIP: 10.5.0.235
         ports:
           eap-discovery:
