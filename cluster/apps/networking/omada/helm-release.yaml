@@ -45,7 +45,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: "${SVC_OMADA_IP}"
+        # loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           http:
             port: 8043
