@@ -80,5 +80,4 @@ spec:
           shareHost: 10.5.0.10
           shareBasePath: "/mnt/user/flux"
           controllerBasePath: "/nfs-storage"
-          dirPermissionsUser: 1000
-          dirPermissionsGroup: 1000
+          dirPermissionsMode: "0777"
