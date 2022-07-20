@@ -9,6 +9,6 @@ resources:
   - media
   - home
   - monitoring
-  # - storage
+  - democratic-csi
   # - kasten
   # - system-upgrade
