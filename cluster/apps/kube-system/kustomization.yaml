@@ -10,4 +10,4 @@ resources:
   - reloader
   - kube-vip
   - intel-gpu-plugin
-  - snapshot-controller
+  # - snapshot-controller
