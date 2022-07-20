@@ -7,7 +7,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: nfs-csi
+  storageClassName: democratic-nfs-client
   resources:
     requests:
       storage: 128Mi
