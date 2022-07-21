@@ -43,7 +43,6 @@ spec:
     alertmanager:
       enabled: false
     grafana:
-      ingressClassName: "nginx"
       adminPassword: prom-operator
       grafanaSpec:
         replicas: 1
@@ -51,6 +50,7 @@ spec:
         enabled: true
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
+          kubernetes.io/ingress.class: nginx
         hosts:
           - grafana.${SECRET_DOMAIN}
         tls:
