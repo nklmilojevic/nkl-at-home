@@ -10,5 +10,4 @@ resources:
   - home
   - monitoring
   - democratic-csi
-  - kasten
   # - system-upgrade
