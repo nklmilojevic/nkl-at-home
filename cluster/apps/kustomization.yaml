@@ -10,4 +10,4 @@ resources:
   - home
   - monitoring
   - democratic-csi
-  # - system-upgrade
+  - system-upgrade
